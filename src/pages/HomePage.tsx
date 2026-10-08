@@ -32,13 +32,7 @@ export function HomePage({
         </div>
       </section>
       <section className={styles.sectionHead}>
-        <div className={styles.heading}>
-          <h3>Deine Ziele</h3>
-          <p>Ein kleiner Schritt jeden Tag.</p>
-        </div>
-        <button className={styles.linkBtn} onClick={onEntry}>
-          Heute erfassen →
-        </button>
+        <h3 className={styles.heading}>Deine Ziele</h3>
       </section>
       <div className={styles.goals}>
         {active.map((item) => {
@@ -49,16 +43,20 @@ export function HomePage({
               key={item.id}
               style={{ "--accent": item.color } as React.CSSProperties}
             >
-              <div className={`centerElement ${styles.itemIcon}`}>
-                {item.icon}
-              </div>
-              <div className={styles.goalBody}>
+              <div className={styles.goalHeader}>
                 <p className={styles.goalName}>{item.name}</p>
                 {value && (
-                  <>
-                    <strong className={styles.goalProgressNumber}>
-                      {value.value} / {value.target}
-                    </strong>
+                  <strong className={styles.goalProgressNumber}>
+                    {value.value} / {value.target}
+                  </strong>
+                )}
+              </div>
+              <div className={styles.goalDetails}>
+                <div className={`centerElement ${styles.itemIcon}`}>
+                  {item.icon}
+                </div>
+                {value && (
+                  <div className={styles.goalBody}>
                     <div className={styles.progress}>
                       <i
                         className={styles.progressBar}
@@ -68,7 +66,7 @@ export function HomePage({
                       />
                     </div>
                     <small className={styles.goalPeriod}>{value.label}</small>
-                  </>
+                  </div>
                 )}
               </div>
             </div>

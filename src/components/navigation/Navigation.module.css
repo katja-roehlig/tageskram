@@ -3,6 +3,7 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.4rem;
   width: 100%;
+  padding-top: 0.5rem;
 }
 
 .navButton {

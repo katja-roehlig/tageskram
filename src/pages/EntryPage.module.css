@@ -142,7 +142,8 @@
 .trackerGrid {
   display: grid;
   max-width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(29rem, 34.5rem));
+  grid-template-columns: 1fr;
+  width: 100%;
   justify-content: start;
   gap: 0.8rem;
   margin-top: 1.2rem;
@@ -197,6 +198,9 @@
   }
   .section {
     padding-inline: 2.4rem;
+  }
+  .trackerGrid {
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 34.5rem));
   }
 }
 
