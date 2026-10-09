@@ -13,7 +13,6 @@ export type MoodId = string;
 export type DateKey = string;
 
 export interface PersistedTrackerState {
-  version: number;
   data: TrackerData;
 }
 

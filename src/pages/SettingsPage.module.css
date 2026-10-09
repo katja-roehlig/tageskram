@@ -1,0 +1,76 @@
+.settingsContainer {
+  padding-inline: 1.5rem;
+  margin-top: 2rem;
+  flex-shrink: 0;
+}
+
+.eyebrow {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-eyebrow);
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+.downloadButton {
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  background-color: var(--text-eyebrow);
+  color: white;
+}
+
+.section {
+  margin-top: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.hint {
+  color: #666;
+
+  line-height: 1.45;
+  margin: 0 0 16px 0;
+}
+
+.downloadButton:hover {
+  background-color: #618a4a;
+}
+
+.downloadButton:active {
+  transform: scale(0.98);
+}
+
+.importLabel {
+  display: inline-block;
+  background-color: #4a77a8; /* Ruhiges Blau */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+}
+
+.importLabel:hover {
+  background-color: #375b82;
+}
+.importLabel:active {
+  transform: scale(0.98);
+}
+
+/* Das originale, hässliche Datei-Eingabefeld wird hier unsichtbar gemacht */
+.hiddenInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

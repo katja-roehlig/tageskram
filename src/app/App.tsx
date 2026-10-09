@@ -10,6 +10,7 @@ import { CalendarPage } from "../pages/CalendarPage";
 import { EntryPage } from "../pages/EntryPage";
 import { HomePage } from "../pages/HomePage";
 import { EvaluationPage } from "../pages/EvaluationPage";
+import { SettingsPage } from "../pages/SettingsPage";
 import { AppLayout } from "../components/layout/AppLayout";
 import { todayKey } from "../utils/date";
 import type { Quote } from "../types";
@@ -30,7 +31,7 @@ function CalendarRoute() {
   return (
     <CalendarPage
       selected={todayKey()}
-      onOpenDay={(date) => navigate(`/eintrag/${date}`)}
+      onOpenDay={(date: any) => navigate(`/eintrag/${date}`)}
     />
   );
 }
@@ -57,10 +58,11 @@ export default function App() {
             />
           }
         />
-        <Route path="/eintrag" element={<EntryRoute />} />
-        <Route path="/eintrag/:date" element={<EntryRoute />} />
-        <Route path="/kalender" element={<CalendarRoute />} />
-        <Route path="/auswertung" element={<EvaluationPage />} />
+        <Route path="/entry" element={<EntryRoute />} />
+        <Route path="/entry/:date" element={<EntryRoute />} />
+        <Route path="/calendar" element={<CalendarRoute />} />
+        <Route path="/evaluation" element={<EvaluationPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

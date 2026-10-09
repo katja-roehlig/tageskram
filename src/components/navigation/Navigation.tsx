@@ -5,13 +5,15 @@ import {
   CalendarDotsIcon,
   ChartBarIcon,
   HouseIcon,
+  GearSixIcon,
 } from "@phosphor-icons/react";
 
 const links: Array<[string, string, React.ComponentType<any>]> = [
   ["/", "Übersicht", HouseIcon],
-  ["/eintrag", "Heute", PlusCircleIcon],
-  ["/kalender", "Kalender", CalendarDotsIcon],
-  ["/auswertung", "Auswertung", ChartBarIcon],
+  ["/entry", "Heute", PlusCircleIcon],
+  ["/calendar", "Kalender", CalendarDotsIcon],
+  ["/evaluation", "Auswertung", ChartBarIcon],
+  ["/settings", "Einstellungen", GearSixIcon],
 ];
 
 export function Navigation() {

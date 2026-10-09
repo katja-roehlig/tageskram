@@ -55,7 +55,7 @@
   right: 0;
   background: var(--primary-80);
   z-index: 19;
-  padding: 0.4rem 1rem calc(0.4rem + env(safe-area-inset-bottom));
+  padding: 0.4rem 0.5rem calc(0.4rem + env(safe-area-inset-bottom));
   box-shadow: 0 14px 32px var(--shadow-soft);
   border-radius: 0;
   flex: none;
