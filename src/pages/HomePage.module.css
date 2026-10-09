@@ -99,6 +99,8 @@
   align-items: flex-start;
   gap: 0.8rem;
   width: fit-content;
+  /* border: 1px solid var(--border-light); */
+  box-shadow: 2px 2px 4px var(--shadow-soft);
 }
 
 .quoteAuthor {

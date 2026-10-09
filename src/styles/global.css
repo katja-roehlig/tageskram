@@ -13,7 +13,7 @@
   --bg-surface-2: #fafbf9;
   --bg-surface-3: #edf0ec;
   --bg-surface-4: #e2e1e0;
-  --bg-surface-5: #e9e1ca;
+  --bg-surface-5: #ffefd2;
   --bg-surface-modal: #fff;
   --bg-active: var(--primary-06);
   --bg-mobile-header: var(--bg-surface-1);
@@ -122,7 +122,7 @@
 [data-theme="minimal"] {
   color-scheme: light;
 
-  --bg-main: #ecf3f7;
+  --bg-main: hsl(202, 41%, 95%);
   --bg-main-mid: hsl(212, 30%, 95%);
   --bg-main-end: #d8dfe7;
 
@@ -130,7 +130,7 @@
   --bg-surface-2: #f7f8f8;
   --bg-surface-3: #f5f7f7;
   --bg-surface-4: #d4d9da;
-  --bg-surface-5: #eeeeed;
+  --bg-surface-5: hsl(48, 100%, 99%);
   --bg-surface-modal: #fff;
 
   --bg-active: var(--primary-06);
