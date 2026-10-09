@@ -1,6 +1,7 @@
 import { useTracker } from "../app/TrackerProvider";
 import styles from "./SettingsPage.module.css";
 import { TRACKER_STORAGE_KEY } from "../state/trackerStorage";
+import { DownloadSimpleIcon, UploadSimpleIcon } from "@phosphor-icons/react";
 
 export function SettingsPage() {
   const { data } = useTracker();
@@ -35,35 +36,52 @@ export function SettingsPage() {
 
   return (
     <div className={styles.settingsContainer}>
-      <header>
-        <div>
-          <p className={styles.eyebrow}>Nützliches</p>
-          <h2>Einstellungen</h2>
-        </div>
+      <header className={styles.header}>
+        <p className={styles.eyebrow}>Nützliches</p>
+        <h2>Einstellungen</h2>
       </header>
       <section className={styles.section}>
-        <h3>Darstellung</h3>
-        <p className={styles.hint}>Dark Mode (Bald verfügbar)</p>
+        <div>
+          <h3 className={styles.sectionTitle}>Darstellung</h3>
+          <p className={styles.hint}>Wähle ein Design.</p>
+        </div>
+        <div className={styles.comingSoon}>
+          <span className={styles.comingSoonIcon} aria-hidden="true">
+            🌙
+          </span>
+          <span className={styles.comingSoonText}>Dark Mode</span>
+          <span className={styles.badge}>Bald verfügbar</span>
+        </div>
       </section>
 
       <section className={styles.section}>
-        <h3>Datensicherung</h3>
-        <p className={styles.hint}>
-          Sichere deine täglichen Tracker-Daten als Datei auf deinem Gerät.
-        </p>
+        <div>
+          <h3 className={styles.sectionTitle}>Datensicherung</h3>
+          <p className={styles.hint}>
+            Sichere deine täglichen Tracker-Daten als Datei auf deinem Gerät.
+          </p>
+        </div>
         <button className={styles.downloadButton} onClick={() => exportData()}>
-          Backup erstellen
+          <span className={styles.buttonIcon} aria-hidden="true">
+            <DownloadSimpleIcon size={24} />
+          </span>
+          Sichern
         </button>
       </section>
 
       <section className={styles.section}>
-        <h3>Daten wieder abrufen</h3>
-        <p className={styles.hint}>
-          Wähle eine zuvor gespeicherte JSON-Datei aus, um deine Daten
-          wiederherzustellen.
-        </p>
+        <div>
+          <h3 className={styles.sectionTitle}>Daten wieder abrufen</h3>
+          <p className={styles.hint}>
+            Wähle eine gespeicherte JSON-Datei aus, um deine Daten
+            wiederherzustellen.
+          </p>
+        </div>
         <label htmlFor="backup-upload" className={styles.importLabel}>
-          Backup einspielen (Import)
+          <span className={styles.buttonIcon} aria-hidden="true">
+            <UploadSimpleIcon size={24} />
+          </span>
+          Laden
         </label>
         <input
           id="backup-upload"

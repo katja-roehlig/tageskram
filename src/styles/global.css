@@ -46,8 +46,8 @@
   --color-brand-1: #f09c14;
   --color-brand-2: #fdec78;
   --color-accent: #356b54;
+  --color-accent-2: var(--primary-70);
   --color-attention: #c74e59;
-
   --shadow-soft: #1e362522;
   --shadow-dark: #7a847d70;
 
