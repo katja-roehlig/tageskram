@@ -232,6 +232,9 @@
   .calendarHeader {
     gap: 2.4rem;
   }
+  .eyebrow {
+    font-size: 1.6rem;
+  }
 }
 
 @media (width >= 900px) {

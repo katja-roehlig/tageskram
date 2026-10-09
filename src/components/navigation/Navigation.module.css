@@ -19,7 +19,7 @@
 
 .navButtonActive {
   background: transparent;
-  color: #fbe06a;
+  color: var(--color-nav-active);
   transform: scale(1.1);
 }
 

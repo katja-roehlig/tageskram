@@ -121,7 +121,7 @@ export function EvaluationPage() {
                 <span
                   className={styles.itemIcon}
                   style={{
-                    background: `color-mix(in srgb, ${item.color} 16%, white)`,
+                    background: `color-mix(in srgb, ${item.color} 16%, var(--color-tint-base))`,
                   }}
                 >
                   {item.icon}
@@ -154,7 +154,7 @@ export function EvaluationPage() {
               <div className={styles.moodResult} key={mood.id}>
                 <span
                   style={{
-                    background: `color-mix(in srgb, ${mood.color} 16%, white)`,
+                    background: `color-mix(in srgb, ${mood.color} 16%, var(--color-tint-base))`,
                   }}
                 >
                   {mood.icon}
@@ -194,7 +194,7 @@ export function EvaluationPage() {
                       <em
                         key={mood.id}
                         style={{
-                          background: `color-mix(in srgb, ${mood.color} 16%, white)`,
+                          background: `color-mix(in srgb, ${mood.color} 16%, var(--color-tint-base))`,
                         }}
                       >
                         {mood.icon} {mood.label} · {count}×

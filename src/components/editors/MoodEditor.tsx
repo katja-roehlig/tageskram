@@ -37,7 +37,7 @@ export function MoodEditor({
           Bezeichnung
           <input
             autoFocus
-            className={styles.modalInput}
+            className={`${styles.modalInput} ${styles.nameInput}`}
             value={form.label}
             onChange={(e) => setForm({ ...form, label: e.target.value })}
           />

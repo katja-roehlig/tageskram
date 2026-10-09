@@ -36,7 +36,8 @@
 
 .trackerIcon {
   flex: none;
-  background-color: #ffffffa7;
+  /* background-color: color-mix(in srgb, var(--bg-surface-1) 65%, transparent); */
+  background-color: var(--bg-surface-1);
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
@@ -56,11 +57,11 @@
   font-size: 1.6rem;
   font-weight: 800;
   text-align: right;
-  width: 3.0rem;
+  width: 3rem;
   display: inline-block;
   flex: none;
   padding-right: 0.4rem;
-  color: color-mix(in srgb, var(--accent) 95%, black);
+  color: color-mix(in srgb, var(--accent) 95%, var(--color-shade));
 }
 .iconEditTracker {
   color: var(--primary-80);
@@ -75,11 +76,15 @@
 
 .buttonInc {
   width: 3.5rem;
-  height: 3.0rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: color-mix(in srgb, var(--accent) 30%, white);
+  background-color: color-mix(
+    in srgb,
+    var(--accent) 30%,
+    var(--color-tint-base)
+  );
   color: var(--accent);
   border-radius: 10px;
   cursor: pointer;
@@ -95,7 +100,7 @@
 }
 .buttonDec:hover,
 .buttonInc:hover {
-  background: color-mix(in srgb, var(--accent) 50%, white);
+  background: color-mix(in srgb, var(--accent) 50%, var(--color-tint-base));
   transform: scale(1.1);
 }
 
@@ -103,6 +108,11 @@
 .buttonInc:active {
   transform: scale(0.92);
   opacity: 0.8;
+}
+@media (width >= 768px) {
+  .trackerName {
+    font-size: 1.6rem;
+  }
 }
 
 @media (width >= 900px) {
@@ -130,7 +140,7 @@
   }
 
   .controlsBlock {
-    gap: 1.0rem;
+    gap: 1rem;
   }
 
   .buttonDec,

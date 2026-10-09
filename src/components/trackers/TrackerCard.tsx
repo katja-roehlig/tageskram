@@ -35,7 +35,7 @@ export function TrackerCard({
         style={
           {
             "--accent": item.color,
-            "--soft": `color-mix(in srgb, ${item.color} 16%, white)`,
+            "--soft": `color-mix(in srgb, ${item.color} 16%, var(--color-tint-base))`,
           } as React.CSSProperties
         }
       >

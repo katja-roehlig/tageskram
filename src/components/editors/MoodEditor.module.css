@@ -5,7 +5,7 @@
   color: var(--text-eyebrow);
   font-weight: 700;
   margin-bottom: 0.7rem;
-  padding-inline: 2.0rem;
+  padding-inline: 2rem;
 }
 
 .saveButton {
@@ -25,11 +25,11 @@
 .modalActions {
   display: flex;
   justify-content: space-between;
-  gap: 1.0rem;
+  gap: 1rem;
   margin-top: 2.2rem;
   position: sticky;
   bottom: 0px;
-  padding: 2.5rem 2.0rem;
+  padding: 2.5rem 2rem;
   background-color: var(--bg-surface-4);
   border-top: 1px solid var(--border-light);
   z-index: 1;
@@ -59,7 +59,7 @@
 
 .cancelButton {
   min-height: 4.4rem;
-  padding: 0.9rem 1.0rem 0.9rem 1.0rem;
+  padding: 0.9rem 1rem 0.9rem 1rem;
   color: var(--text-p-60);
   font-weight: 800;
   display: flex;
@@ -75,7 +75,7 @@
 .modalHeading {
   font-size: 2.4rem;
   margin-bottom: 0.4rem;
-  padding-inline: 2.0rem;
+  padding-inline: 2rem;
 }
 
 .modalLabel {
@@ -85,18 +85,29 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin-top: 1.3rem;
-  padding-inline: 2.0rem;
+  padding-inline: 2rem;
 }
 
 .modalInput {
   border: 1px solid var(--border-dark);
   border-radius: 8px;
-  padding: 1.0rem;
+  padding: 1rem;
   width: 100%;
   min-height: 4.6rem;
   font-size: 1.6rem;
 }
+.nameInput {
+  outline: none;
+  border: 2px solid var(--border-light);
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
 
+.nameInput:focus {
+  border-color: var(--border-active);
+  background: var(--bg-surface-1);
+}
 @media (width >= 900px) {
   .modalHeading {
     font-size: 2.7rem;
@@ -109,6 +120,6 @@
   .eyebrow,
   .modalActions,
   .modalHeading {
-    padding-inline: 3.0rem;
+    padding-inline: 3rem;
   }
 }

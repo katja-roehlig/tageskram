@@ -57,7 +57,7 @@
 
 .progress {
   height: 0.6rem;
-  background: var(--bg-surface-3);
+  background: var(--bg-surface-2);
   border-radius: 99px;
   margin: 0.9rem 0 0.7rem;
   overflow: hidden;
@@ -163,7 +163,7 @@
 }
 
 .goalProgressNumber {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: var(--text-p-50);
   white-space: nowrap;
 }
@@ -181,8 +181,17 @@
 }
 
 @media (width >= 768px) {
+  .quote {
+    font-size: 1.9rem;
+  }
   .goals {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .goalName {
+    font-size: 1.4rem;
+  }
+  .goalPeriod {
+    font-size: 1.4rem;
   }
 
   .hero {
@@ -190,10 +199,14 @@
   }
   .top {
     justify-content: start;
+    gap: 8rem;
   }
 
   .avatar {
     font-size: 7rem;
+  }
+  .eyebrow {
+    font-size: 1.6rem;
   }
 
   .homeContainer {
@@ -206,17 +219,19 @@
   .homeContainer {
     padding: 0;
   }
+  .quote {
+    font-size: 2.2rem;
+  }
   .sectionHead {
     align-items: end;
     margin: 4.2rem 0 1.8rem;
   }
+  .goalName {
+    font-size: 1.6rem;
+  }
 
   .hero {
     padding: 3rem 3.4rem;
-  }
-
-  .goalPeriod {
-    font-size: 1.2rem;
   }
 }
 

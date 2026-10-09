@@ -1,11 +1,23 @@
+import { useState } from "react";
 import { useTracker } from "../app/TrackerProvider";
 import styles from "./SettingsPage.module.css";
 import { TRACKER_STORAGE_KEY } from "../state/trackerStorage";
-import { DownloadSimpleIcon, UploadSimpleIcon } from "@phosphor-icons/react";
+import {
+  DownloadSimpleIcon,
+  DropIcon,
+  MoonStarsIcon,
+  SunIcon,
+  UploadSimpleIcon,
+} from "@phosphor-icons/react";
+import { getActiveTheme, saveTheme, type Theme } from "../state/theme";
 
 export function SettingsPage() {
   const { data } = useTracker();
-  console.log(data);
+  const [theme, setCurrentTheme] = useState<Theme>(getActiveTheme);
+  const selectTheme = (nextTheme: Theme) => {
+    saveTheme(nextTheme);
+    setCurrentTheme(nextTheme);
+  };
   const exportData = () => {
     const jsonData = JSON.stringify(data);
     const fileBlob = new Blob([jsonData], { type: "application/json" });
@@ -45,12 +57,44 @@ export function SettingsPage() {
           <h3 className={styles.sectionTitle}>Darstellung</h3>
           <p className={styles.hint}>Wähle ein Design.</p>
         </div>
-        <div className={styles.comingSoon}>
-          <span className={styles.comingSoonIcon} aria-hidden="true">
-            🌙
-          </span>
-          <span className={styles.comingSoonText}>Dark Mode</span>
-          <span className={styles.badge}>Bald verfügbar</span>
+        <div
+          className={styles.themeOptions}
+          role="group"
+          aria-label="Theme auswählen"
+        >
+          <button
+            type="button"
+            className={`${styles.themeButton} ${
+              theme === "light" ? styles.themeButtonActive : ""
+            }`}
+            aria-pressed={theme === "light"}
+            onClick={() => selectTheme("light")}
+          >
+            <SunIcon size={32} />
+            Light
+          </button>
+          <button
+            type="button"
+            className={`${styles.themeButton} ${
+              theme === "dark" ? styles.themeButtonActive : ""
+            }`}
+            aria-pressed={theme === "dark"}
+            onClick={() => selectTheme("dark")}
+          >
+            <MoonStarsIcon size={32} />
+            Dark
+          </button>
+          <button
+            type="button"
+            className={`${styles.themeButton} ${
+              theme === "minimal" ? styles.themeButtonActive : ""
+            }`}
+            aria-pressed={theme === "minimal"}
+            onClick={() => selectTheme("minimal")}
+          >
+            <DropIcon size={32} />
+            Minimal
+          </button>
         </div>
       </section>
 

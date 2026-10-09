@@ -61,34 +61,44 @@
   line-height: 1.3;
 }
 
-.comingSoon {
-  display: flex;
-  align-items: center;
+.themeOptions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.8rem;
   width: 100%;
-  padding: 1.1rem 1.2rem;
-  border: 1px solid var(--border-light);
+}
+
+.themeButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 4.4rem;
+  padding: 1rem 0.4rem;
+  border: 2px solid var(--border-dark);
   border-radius: 10px;
-  background: var(--bg-surface-2);
+  background: var(--bg-surface-4);
+  color: var(--text-basic);
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
 }
 
-.comingSoonIcon {
-  font-size: 1.8rem;
+.themeButton:hover {
+  border-color: var(--border-active);
 }
 
-.comingSoonText {
-  font-weight: 700;
-}
+/* .themeButton:active:not(:disabled) {
+  transform: scale(0.98);
+} */
 
-.badge {
-  margin-left: auto;
-  padding: 0.3rem 0.8rem;
-  border-radius: 99px;
-  background: var(--bg-surface-3);
-  color: var(--text-p-60);
-  font-size: 1.1rem;
-  font-weight: 700;
-  white-space: nowrap;
+.themeButtonActive {
+  border-color: var(--primary-80);
+  background: var(--primary-80);
+  color: var(--color-nav-active);
 }
 
 .downloadButton,
@@ -145,6 +155,18 @@
 
   .section {
     padding: 2rem;
+  }
+  .downloadButton,
+  .importLabel {
+    width: fit-content;
+    padding-inline: 2rem;
+    height: 4.4rem;
+  }
+  .hint {
+    font-size: 1.6rem;
+  }
+  .eyebrow {
+    font-size: 1.6rem;
   }
 }
 
