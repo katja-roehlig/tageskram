@@ -36,7 +36,6 @@
 
 .trackerIcon {
   flex: none;
-  /* background-color: color-mix(in srgb, var(--bg-surface-1) 65%, transparent); */
   background-color: var(--bg-surface-1);
   width: 3.5rem;
   height: 3.5rem;
@@ -64,7 +63,7 @@
   color: color-mix(in srgb, var(--accent) 95%, var(--color-shade));
 }
 .iconEditTracker {
-  color: var(--primary-80);
+  color: inherit;
 }
 .controlsBlock {
   display: flex;
@@ -73,25 +72,28 @@
   gap: clamp(0.8rem, 2.5vw, 2.4rem);
   flex: 1;
 }
-
-.buttonInc {
+.buttonInc,
+.buttonDec {
   width: 3.5rem;
   height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: color-mix(
-    in srgb,
-    var(--accent) 30%,
-    var(--color-tint-base)
-  );
-  color: var(--accent);
   border-radius: 10px;
   cursor: pointer;
   transition:
     opacity 0.1s ease,
     transform 0.1s ease;
   padding: 0;
+}
+
+.buttonInc {
+  background-color: color-mix(
+    in srgb,
+    var(--accent) 30%,
+    var(--color-tint-base)
+  );
+  color: var(--accent);
 }
 .buttonDec svg,
 .buttonInc svg {
@@ -130,10 +132,6 @@
     font-size: 2.4rem;
   }
 
-  .trackerName {
-    font-size: 1.4rem;
-  }
-
   .countNumber {
     font-size: 1.9rem;
     width: 4.5rem;
@@ -148,4 +146,38 @@
     width: 3.6rem;
     height: 3.6rem;
   }
+}
+
+:global([data-theme="dark"]) .tracker {
+  background-color: color-mix(in srgb, var(--accent) 38%, #ffffff14);
+
+  border-color: color-mix(in srgb, var(--accent) 85%, #ffffff);
+}
+
+:global([data-theme="dark"]) .countNumber {
+  color: var(--text-basic);
+}
+
+:global([data-theme="dark"]) .buttonInc,
+.buttonDec {
+  background-color: var(--bg-surface-1);
+
+  color: #fff;
+}
+
+:global([data-theme="dark"]) .buttonDec:hover,
+:global([data-theme="dark"]) .buttonInc:hover {
+  background: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--accent) 8%, #ffffff) 12%,
+    var(--bg-surface-1)
+  );
+}
+
+:global([data-theme="dark"]) .trackerIcon {
+  background-color: #ffffff12;
+}
+
+:global([data-theme="dark"]) .trackerEditClickable:hover {
+  border-color: color-mix(in srgb, var(--accent) 80%, #ffffff);
 }

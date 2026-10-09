@@ -11,7 +11,7 @@
   padding: 1rem 1.4rem;
   align-items: center;
   justify-content: space-between;
-  background: var(--bg-surface-1);
+  background: var(--bg-mobile-header);
   border-bottom: 1px solid var(--border-dark);
   backdrop-filter: blur(14px);
   flex: none;
@@ -66,7 +66,14 @@
   flex: 1;
   overflow: visible;
 }
-
+@media (width >= 768px) {
+  .mobileHeader {
+    height: 70px;
+  }
+  .mobileNav {
+    height: 70px;
+  }
+}
 @media (width >= 900px) {
   .app {
     flex-direction: row;

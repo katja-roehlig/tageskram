@@ -10,7 +10,7 @@
 
 .saveButton {
   background: var(--primary-80);
-  color: var(--bg-surface-1);
+  color: var(--text-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,6 +99,7 @@
 .nameInput {
   outline: none;
   border: 2px solid var(--border-light);
+  background-color: var(--bg-surface-1);
   transition:
     border-color 0.15s ease,
     background-color 0.15s ease;

@@ -235,6 +235,12 @@
   .eyebrow {
     font-size: 1.6rem;
   }
+  .evaluationContainer {
+    padding-inline: 3.5rem;
+  }
+  .switchButton {
+    padding-block: 1.5rem;
+  }
 }
 
 @media (width >= 900px) {
@@ -311,4 +317,43 @@
   .evalGrid {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+:global([data-theme="dark"]) .itemIcon {
+  background: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--custom-color) 8%, #ffffff) 8%,
+    var(--bg-surface-1)
+  ) !important;
+  filter: brightness(0.88) saturate(0.9);
+}
+
+:global([data-theme="dark"]) .evalRow b,
+:global([data-theme="dark"]) .relation > b {
+  color: color-mix(in srgb, var(--custom-color) 80%, #ffffff) !important;
+  filter: brightness(0.88) saturate(0.9);
+}
+
+:global([data-theme="dark"]) .progress i {
+  background: color-mix(in srgb, var(--custom-color) 80%, #ffffff) !important;
+  filter: brightness(0.88) saturate(0.9);
+}
+
+:global([data-theme="dark"]) .moodResult span {
+  background: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--custom-color) 8%, #ffffff) 8%,
+    var(--bg-surface-1)
+  ) !important;
+  filter: brightness(0.88) saturate(0.9);
+}
+
+:global([data-theme="dark"]) .relation em {
+  background: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--custom-color) 8%, #ffffff) 8%,
+    var(--bg-surface-1)
+  ) !important;
+  border: 1px solid color-mix(in srgb, var(--custom-color) 80%, #ffffff);
+  filter: brightness(0.88) saturate(0.9);
 }

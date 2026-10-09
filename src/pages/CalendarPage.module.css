@@ -147,6 +147,12 @@
   .eyebrow {
     font-size: 1.6rem;
   }
+  .calendarContainer {
+    padding-inline: 3.5rem;
+  }
+  .switchButton {
+    padding-block: 1.5rem;
+  }
 }
 
 @media (width >= 900px) {
@@ -170,4 +176,16 @@
     margin-top: 2.6rem;
     padding: 2.3rem;
   }
+}
+
+:global([data-theme="dark"]) .detailMood {
+  background: color-mix(in srgb, var(--local-mood-color) 28%, #ffffff14);
+  border: 1px solid color-mix(in srgb, var(--local-mood-color) 90%, #ffffff);
+}
+
+:global([data-theme="dark"]) .eventListItem {
+  background: color-mix(in srgb, var(--item-color) 28%, #ffffff16);
+
+  border: 1px solid color-mix(in srgb, var(--item-color) 90%, #ffffff);
+  color: var(--text-basic);
 }

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  height: min(40.0rem, calc(100dvh - 30.0rem));
+  height: min(40rem, calc(100dvh - 30rem));
   min-height: 0;
   width: 100%;
   overflow: hidden;
@@ -29,11 +29,11 @@
 
 .searchInput {
   width: 100%;
-  padding: 1.0rem 1.4rem;
+  padding: 1rem 1.4rem;
   font-size: 1.4rem;
-  border: 2px solid var(--border-light);
+  border: 1px solid var(--border-light);
   border-radius: 10px;
-  background: var(--bg-hover);
+  background: var(--bg-surface-1);
   color: var(--text-main);
   outline: none;
   transition:
@@ -93,11 +93,10 @@
   padding-right: 0.4rem;
 }
 
-/* Eine einzelne Sektion (z.B. Essen & Trinken) */
 .categorySection {
   display: flex;
   flex-direction: column;
-  gap: 1.0rem;
+  gap: 1rem;
   width: 100%;
 }
 
@@ -115,13 +114,15 @@
   grid-template-columns: repeat(auto-fill, minmax(3.8rem, 1fr));
   gap: 0.6rem;
   width: 100%;
-  background-color: var(--bg-surface-2);
+  background-color: var(--bg-active);
+  border-radius: 8px;
+  padding: 1.5rem;
 }
 
 .emojiIcon {
   font-size: 2.4rem;
-  height: 4.0rem;
-  width: 4.0rem;
+  height: 4rem;
+  width: 4rem;
   display: inline-grid;
   place-content: center;
   border-radius: 8px;

@@ -210,7 +210,7 @@
   }
 
   .homeContainer {
-    padding-inline: 2.4rem;
+    padding-inline: 3.5rem;
     padding-top: 0;
   }
 }
@@ -251,4 +251,15 @@
   .homeContainer {
     margin-top: -1rem;
   }
+}
+
+:global([data-theme="dark"]) .itemIcon {
+  background-color: var(--bg-surface-3);
+  border-color: color-mix(in srgb, var(--accent) 80%, #ffffff);
+  filter: brightness(0.88) saturate(0.9);
+}
+
+:global([data-theme="dark"]) .goalName {
+  color: color-mix(in srgb, var(--accent) 48%, #ffffff);
+  filter: brightness(0.88) saturate(0.9);
 }

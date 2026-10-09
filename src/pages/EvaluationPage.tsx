@@ -121,13 +121,20 @@ export function EvaluationPage() {
                 <span
                   className={styles.itemIcon}
                   style={{
+                    "--custom-color": item.color,
                     background: `color-mix(in srgb, ${item.color} 16%, var(--color-tint-base))`,
-                  }}
+                  } as React.CSSProperties}
                 >
                   {item.icon}
                 </span>
                 <div>
-                  <b style={{ color: item.color }}>{item.name}</b>
+                  <b
+                    style={
+                      { "--custom-color": item.color, color: item.color } as React.CSSProperties
+                    }
+                  >
+                    {item.name}
+                  </b>
                   <small>
                     {item.count} Erfassungen an {item.days.length} Tagen
                   </small>
@@ -135,8 +142,9 @@ export function EvaluationPage() {
                     <i
                       style={{
                         width: `${(item.days.length / days.length) * 100}%`,
+                        "--custom-color": item.color,
                         background: item.color,
-                      }}
+                      } as React.CSSProperties}
                     />
                   </div>
                 </div>
@@ -154,8 +162,9 @@ export function EvaluationPage() {
               <div className={styles.moodResult} key={mood.id}>
                 <span
                   style={{
+                    "--custom-color": mood.color,
                     background: `color-mix(in srgb, ${mood.color} 16%, var(--color-tint-base))`,
-                  }}
+                  } as React.CSSProperties}
                 >
                   {mood.icon}
                 </span>
@@ -185,7 +194,11 @@ export function EvaluationPage() {
               .filter((value) => value.count);
             return (
               <div key={item.id} className={styles.relation}>
-                <b style={{ color: item.color }}>
+                <b
+                  style={
+                    { "--custom-color": item.color, color: item.color } as React.CSSProperties
+                  }
+                >
                   {item.icon} {item.name}
                 </b>
                 {linked.length ? (
@@ -194,8 +207,9 @@ export function EvaluationPage() {
                       <em
                         key={mood.id}
                         style={{
+                          "--custom-color": mood.color,
                           background: `color-mix(in srgb, ${mood.color} 16%, var(--color-tint-base))`,
-                        }}
+                        } as React.CSSProperties}
                       >
                         {mood.icon} {mood.label} · {count}×
                       </em>

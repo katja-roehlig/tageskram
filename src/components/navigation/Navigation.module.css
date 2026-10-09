@@ -56,7 +56,7 @@
   .navButtonActive,
   .navButton:hover {
     background: var(--primary-70);
-    color: var(--bg-surface-1);
+    color: var(--text-light);
   }
 
   .iconWrapper {

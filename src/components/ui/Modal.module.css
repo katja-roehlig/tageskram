@@ -11,15 +11,15 @@
 
 .modalBox {
   position: relative;
-  background: var(--bg-surface-1);
+  background: var(--bg-surface-modal);
   border-radius: 18px;
-  padding: 2.8rem 0.0rem 0.0rem;
+  padding: 2.8rem 0rem 0rem;
   width: 100%;
   display: flex;
   flex-direction: column;
-  max-width: 68.0rem;
+  max-width: 68rem;
   z-index: 100;
-  max-height: calc(100dvh - 4.0rem);
+  max-height: calc(100dvh - 4rem);
   overflow-y: auto;
   overscroll-behavior: none;
 }
@@ -29,8 +29,8 @@
   right: 15px;
   top: 10px;
   color: var(--color-attention);
-  min-width: 4.0rem;
-  min-height: 4.0rem;
+  min-width: 4rem;
+  min-height: 4rem;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -41,13 +41,13 @@
 
 @media (width >= 900px) {
   .modalWrap {
-    padding: 2.0rem;
+    padding: 2rem;
   }
 
   .modalBox {
     border-radius: 16px;
-    padding: 3.0rem 0.0rem 0.0rem;
-    width: min(48.0rem, 100%);
+    padding: 3rem 0rem 0rem;
+    width: min(48rem, 100%);
     min-height: auto;
   }
 }

@@ -181,7 +181,12 @@ export function EntryPage({
           <div className={styles.categoryCard} key={category.id}>
             <div
               className={styles.categoryCardHead}
-              style={{ color: category.color }}
+              style={
+                {
+                  "--category-color": category.color,
+                  color: category.color,
+                } as React.CSSProperties
+              }
             >
               <button
                 className={styles.accordionButton}

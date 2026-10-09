@@ -17,7 +17,7 @@
   grid-template-columns: repeat(7, minmax(0, 1fr));
   border: 1px solid var(--border-dark);
   border-radius: 9px;
-  background: var(--bg-surface-1);
+
   width: 100%;
 }
 
@@ -205,4 +205,24 @@
   .calendarEventIcon {
     font-size: 1.8rem;
   }
+}
+
+:global([data-theme="dark"])
+  .monthDay:not(.muted)[style*="--local-mood-color"] {
+  background: color-mix(in srgb, var(--local-mood-color) 28%, #ffffff10);
+}
+
+/* :global([data-theme="dark"]) .dayMood {
+  filter: brightness(0.88) saturate(0.9);
+} */
+
+:global([data-theme="dark"]) .calendarEvent {
+  /* background: color-mix(
+    in srgb,
+    color-mix(in srgb, var(--item-color) 8%, #ffffff) 8%,
+    var(--bg-surface-1)
+  ); */
+  background: var(--primary-90);
+  border-color: transparent;
+  filter: brightness(0.88) saturate(0.9);
 }
