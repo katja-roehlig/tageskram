@@ -77,11 +77,12 @@
   align-items: center;
   justify-content: end;
   color: var(--bg-main);
+  gap: 0.8rem;
 }
 
 .buttonInc,
 .buttonDec {
-  width: 5rem;
+  width: 5.5rem;
   height: 3.8rem;
   display: flex;
   align-items: center;
@@ -157,7 +158,7 @@
 }
 
 :global([data-theme="dark"]) .trackerIcon {
-  background-color: #fdfcf8a4;
+  background-color: #fdfcf825;
 }
 
 :global([data-theme="dark"]) .trackerEditClickable:hover {
