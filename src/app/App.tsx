@@ -21,7 +21,7 @@ function EntryRoute() {
   return (
     <EntryPage
       date={date}
-      onDate={(nextDate) => navigate(`/eintrag/${nextDate}`)}
+      onDate={(nextDate) => navigate(`/entry/${nextDate}`)}
     />
   );
 }
@@ -31,7 +31,6 @@ function CalendarRoute() {
   return (
     <CalendarPage
       selected={todayKey()}
-      onOpenDay={(date: any) => navigate(`/eintrag/${date}`)}
     />
   );
 }
@@ -53,8 +52,8 @@ export default function App() {
           element={
             <HomePage
               quote={quote}
-              onEntry={() => navigate("/eintrag")}
-              onCalendar={() => navigate("/kalender")}
+              onEntry={() => navigate("/entry")}
+              onCalendar={() => navigate("/calendar")}
             />
           }
         />

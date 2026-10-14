@@ -25,7 +25,7 @@ export function Navigation() {
       {links.map(([path, label, IconComponent]) => {
         const isActive =
           location.pathname === path ||
-          (path === "/eintrag" && location.pathname.startsWith("/eintrag/"));
+          (path === "/entry" && location.pathname.startsWith("/entry/"));
 
         return (
           <button
