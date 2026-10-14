@@ -25,6 +25,26 @@ type Editor =
   | { kind: "mood" }
   | { kind: "mood-delete" }
   | null;
+
+function getColorHue(color: string): number {
+  const red = Number.parseInt(color.slice(1, 3), 16) / 255;
+  const green = Number.parseInt(color.slice(3, 5), 16) / 255;
+  const blue = Number.parseInt(color.slice(5, 7), 16) / 255;
+  const max = Math.max(red, green, blue);
+  const min = Math.min(red, green, blue);
+  const delta = max - min;
+
+  if (delta === 0) return 0;
+  const hue =
+    max === red
+      ? ((green - blue) / delta + 6) % 6
+      : max === green
+        ? (blue - red) / delta + 2
+        : (red - green) / delta + 4;
+
+  return hue >= 5 ? hue - 6 : hue;
+}
+
 export function EntryPage({
   date,
   onDate,
@@ -52,6 +72,9 @@ export function EntryPage({
   } = useTracker();
   const entry = getEntry(date);
   const moods = data.moods;
+  const sortedMoods = [...moods].sort(
+    (a, b) => getColorHue(a.color) - getColorHue(b.color),
+  );
   const [editor, setEditor] = useState<Editor>(null);
   const categories = data.categories || [];
   const [openCategories, setOpenCategories] = useState<Record<string, boolean>>(
@@ -125,7 +148,7 @@ export function EntryPage({
           </div>
         </div>
         <div className={styles.moods}>
-          {moods.map((mood) => (
+          {sortedMoods.map((mood) => (
             <button
               key={mood.id}
               className={`${styles.moodButton} ${entry.mood === mood.id ? styles.moodSelected : ""}`}
