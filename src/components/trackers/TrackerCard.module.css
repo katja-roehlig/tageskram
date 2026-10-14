@@ -33,6 +33,10 @@
   min-width: 0;
 }
 
+.trackerRowEdit {
+  align-items: flex-end;
+}
+
 .trackerEditClickable:hover {
   transform: translateY(-1px);
   border-color: var(--accent);
@@ -68,15 +72,11 @@
   color: color-mix(in srgb, var(--accent) 95%, black);
 }
 
-.iconEditTracker {
-  color: inherit;
-}
-
 .controlsBlock {
   display: flex;
   align-items: center;
   justify-content: end;
-  gap: 0.8rem;
+  color: var(--bg-main);
 }
 
 .buttonInc,
