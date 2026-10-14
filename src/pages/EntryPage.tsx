@@ -4,7 +4,6 @@ import { TrackerEditor } from "../components/editors/TrackerEditor";
 import { MoodEditor } from "../components/editors/MoodEditor";
 import { MoodDeleteModal } from "../components/editors/MoodDeleteModal";
 import { TrackerCard } from "../components/trackers/TrackerCard";
-import { EditModeButton } from "../components/ui/EditModeButton";
 import type { Category, Tracker } from "../types";
 import { addDays, formatDateShort } from "../utils/date";
 import { useTracker } from "../app/TrackerProvider";
@@ -119,7 +118,7 @@ export function EntryPage({
                 className={styles.openEditButton}
                 onClick={() => setIsEditMode(true)}
               >
-                <PencilLineIcon size={28} />
+                <PencilLineIcon size={30} />
               </button>
             )}
           </div>
@@ -187,7 +186,7 @@ export function EntryPage({
               className={styles.openEditButton}
               onClick={() => setIsEditMode(true)}
             >
-              <PencilLineIcon size={28} />
+              <PencilLineIcon size={30} />
             </button>
           )}
           {/* </div> */}
@@ -236,7 +235,7 @@ export function EntryPage({
                     setEditor({ kind: "category", editData: category })
                   }
                 >
-                  <PencilLineIcon size={22} />
+                  <PencilLineIcon size={30} />
                 </button>
               )}
             </div>

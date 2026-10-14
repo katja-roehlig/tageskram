@@ -35,51 +35,54 @@ export function TrackerCard({
         style={
           {
             "--accent": item.color,
-            "--soft": `color-mix(in srgb, ${item.color} 16%, var(--color-tint-base))`,
+            "--soft": `color-mix(in srgb, ${item.color} 16%, white)`,
           } as React.CSSProperties
         }
       >
-        <div className={styles.metaBlock}>
+        <div className={styles.trackerRow}>
+          <span className={styles.trackerName}>{item.name}</span>
+          <span className={styles.countNumber}>{count}</span>
+        </div>
+
+        <div
+          className={`${styles.trackerRow} ${isEditMode ? styles.trackerRowEdit : ""}`}
+        >
           <span className={`centerElement ${styles.trackerIcon}`}>
             {item.icon}
           </span>
 
-          <span className={styles.trackerName}>{item.name}</span>
+          {isEditMode ? (
+            <div className={styles.controlsBlock}>
+              <PencilLineIcon size={30} className={styles.iconEditTracker} />
+            </div>
+          ) : (
+            <div className={styles.controlsBlock}>
+              <button
+                type="button"
+                className={styles.buttonDec}
+                aria-label={`${item.name} verringern`}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  onDecrement();
+                }}
+              >
+                <MinusIcon size={12} weight="bold" />
+              </button>
+
+              <button
+                type="button"
+                className={styles.buttonInc}
+                aria-label={`${item.name} erhöhen`}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  onIncrement();
+                }}
+              >
+                <PlusIcon size={12} weight="bold" />
+              </button>
+            </div>
+          )}
         </div>
-
-        <span className={styles.countNumber}>{count}</span>
-
-        {isEditMode ? (
-          <div className={styles.controlsBlock}>
-            <PencilLineIcon size={18} className={styles.iconEditTracker} />
-          </div>
-        ) : (
-          <div className={styles.controlsBlock}>
-            <button
-              type="button"
-              className={styles.buttonDec}
-              aria-label={`${item.name} verringern`}
-              onClick={(event) => {
-                event.stopPropagation();
-                onDecrement();
-              }}
-            >
-              <MinusIcon size={12} weight="bold" />
-            </button>
-
-            <button
-              type="button"
-              className={styles.buttonInc}
-              aria-label={`${item.name} erhöhen`}
-              onClick={(event) => {
-                event.stopPropagation();
-                onIncrement();
-              }}
-            >
-              <PlusIcon size={12} weight="bold" />
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );
