@@ -58,7 +58,7 @@
   align-items: center;
   padding: 0.9rem 1.5rem;
   border-radius: 10px;
-  background: color-mix(in srgb, var(--moodColor) 16%, var(--color-tint-base));
+  background: color-mix(in srgb, var(--moodColor) 16%, white);
   border: 1px solid
     color-mix(in srgb, var(--moodColor) 40%, var(--bg-surface-1));
 }

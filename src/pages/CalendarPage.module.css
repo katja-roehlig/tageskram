@@ -92,11 +92,7 @@
   border-radius: 8px;
   padding: 0.7rem 1rem;
   margin: 1.4rem 0;
-  background: color-mix(
-    in srgb,
-    var(--local-mood-color) 16%,
-    var(--color-tint-base)
-  );
+  background: color-mix(in srgb, var(--local-mood-color) 16%, white);
 }
 
 .eventList {
@@ -118,7 +114,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  background: color-mix(in srgb, var(--item-color) 16%, var(--color-tint-base));
+  background: color-mix(in srgb, var(--item-color) 16%, white);
   color: var(--item-color);
 }
 

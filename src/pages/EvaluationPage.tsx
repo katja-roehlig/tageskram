@@ -120,17 +120,22 @@ export function EvaluationPage() {
               <div className={styles.evalRow} key={item.id}>
                 <span
                   className={styles.itemIcon}
-                  style={{
-                    "--custom-color": item.color,
-                    background: `color-mix(in srgb, ${item.color} 16%, var(--color-tint-base))`,
-                  } as React.CSSProperties}
+                  style={
+                    {
+                      "--custom-color": item.color,
+                      background: `color-mix(in srgb, ${item.color} 16%, white)`,
+                    } as React.CSSProperties
+                  }
                 >
                   {item.icon}
                 </span>
                 <div>
                   <b
                     style={
-                      { "--custom-color": item.color, color: item.color } as React.CSSProperties
+                      {
+                        "--custom-color": item.color,
+                        color: item.color,
+                      } as React.CSSProperties
                     }
                   >
                     {item.name}
@@ -140,11 +145,13 @@ export function EvaluationPage() {
                   </small>
                   <div className={styles.progress}>
                     <i
-                      style={{
-                        width: `${(item.days.length / days.length) * 100}%`,
-                        "--custom-color": item.color,
-                        background: item.color,
-                      } as React.CSSProperties}
+                      style={
+                        {
+                          width: `${(item.days.length / days.length) * 100}%`,
+                          "--custom-color": item.color,
+                          background: item.color,
+                        } as React.CSSProperties
+                      }
                     />
                   </div>
                 </div>
@@ -161,10 +168,12 @@ export function EvaluationPage() {
             moodCounts.map(({ mood, count }) => (
               <div className={styles.moodResult} key={mood.id}>
                 <span
-                  style={{
-                    "--custom-color": mood.color,
-                    background: `color-mix(in srgb, ${mood.color} 16%, var(--color-tint-base))`,
-                  } as React.CSSProperties}
+                  style={
+                    {
+                      "--custom-color": mood.color,
+                      background: `color-mix(in srgb, ${mood.color} 16%, white)`,
+                    } as React.CSSProperties
+                  }
                 >
                   {mood.icon}
                 </span>
@@ -196,7 +205,10 @@ export function EvaluationPage() {
               <div key={item.id} className={styles.relation}>
                 <b
                   style={
-                    { "--custom-color": item.color, color: item.color } as React.CSSProperties
+                    {
+                      "--custom-color": item.color,
+                      color: item.color,
+                    } as React.CSSProperties
                   }
                 >
                   {item.icon} {item.name}
@@ -206,10 +218,12 @@ export function EvaluationPage() {
                     {linked.map(({ mood, count }) => (
                       <em
                         key={mood.id}
-                        style={{
-                          "--custom-color": mood.color,
-                          background: `color-mix(in srgb, ${mood.color} 16%, var(--color-tint-base))`,
-                        } as React.CSSProperties}
+                        style={
+                          {
+                            "--custom-color": mood.color,
+                            background: `color-mix(in srgb, ${mood.color} 16%, white)`,
+                          } as React.CSSProperties
+                        }
                       >
                         {mood.icon} {mood.label} · {count}×
                       </em>

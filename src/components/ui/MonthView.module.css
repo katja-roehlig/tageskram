@@ -86,7 +86,7 @@
   border: 1px solid var(--border-active);
   width: 100%;
   aspect-ratio: 1;
-  background: color-mix(in srgb, var(--item-color) 16%, var(--color-tint-base));
+  background: color-mix(in srgb, var(--item-color) 16%, white);
 }
 
 .calendarEventIcon {
